@@ -9,7 +9,7 @@ public class RoomChargeCalculator {
     public static int fixedStandardFamilyFee = 3000;
     public static int fixedStandardSingelFee = 2000;
 
-    // create global variables extra facility prices
+    // create global variables for extra facility prices
     public static int priceForBalcony = 500;
     public static int priceforParking = 200;
     public static int priceForTv = 200;
@@ -109,6 +109,7 @@ public class RoomChargeCalculator {
             System.out.println("\n*** You hava Chosen Delux Double Room ***");
             System.out.println("\nFixed fee for delux Double Room:- " + fixeddeluxDoubleFee);
 
+            // show extra facility price list
             System.out.println("\n~~ Additional Services for delux-Double Room ~~");
             System.out.println("Balcony fee:- " + priceForBalcony);
             System.out.println("Parking fee:- " + priceforParking);
@@ -119,30 +120,69 @@ public class RoomChargeCalculator {
             System.out.print("\nDo you want to add Additional Services for delux-Double Room? (Yes/No): ");
             cusAnswer = sc.next();
 
+            // check customer enter correct answer
+            while (!(cusAnswer.toLowerCase().equals("yes")) && !(cusAnswer.toLowerCase().equals("no"))) {
+
+                System.out.println("\n... Please Enter yes/no for your answer!!!! ...");
+
+                System.out.print("Do you want to add Additional Services for delux-Double Room? (Yes/No): ");
+                cusAnswer = sc.next();
+
+            }
+
             // use toLowerCase() for changing the customer's answer to lowercase letters
             if (cusAnswer.toLowerCase().equals("yes")) {
+
                 System.out.print("\n*Do you want Balcony facility? (Yes/No): ");
                 String deluxBalcony = sc.next();
+                // check customer enter correct answer
+                while (!(deluxBalcony.toLowerCase().equals("yes")) && !(deluxBalcony.toLowerCase().equals("no"))) {
+                    System.out.println("\n... Please Enter yes/no for your answer!!!! ...");
+                    System.out.print("*Do you want Balcony facility? (Yes/No): ");
+                    deluxBalcony = sc.next();
+                }
+
+                System.out.print("*Do you want Parking facility? (Yes/No): ");
+                String deluxParking = sc.next();
+                while (!(deluxParking.toLowerCase().equals("yes")) && !(deluxParking.toLowerCase().equals("no"))) {
+                    System.out.println("\n... Please Enter yes/no for your answer!!!! ...");
+                    System.out.print("*Do you want Parking facility? (Yes/No): ");
+                    deluxParking = sc.next();
+                }
+
+                System.out.print("*Do you want Televsion facility? (Yes/No): ");
+                String deluxTv = sc.next();
+                while (!(deluxTv.toLowerCase().equals("yes")) && !(deluxTv.toLowerCase().equals("no"))) {
+                    System.out.println("\n... Please Enter yes/no for your answer!!!! ...");
+                    System.out.print("*Do you want Televsion facility? (Yes/No): ");
+                    deluxTv = sc.next();
+                }
+
+                System.out.print("*Do you want Kitchen facility? (Yes/No): ");
+                String deluxKitchen = sc.next();
+                while (!(deluxKitchen.toLowerCase().equals("yes")) && !(deluxKitchen.toLowerCase().equals("no"))) {
+                    System.out.println("\n... Please Enter yes/no for your answer!!!! ...");
+                    System.out.print("*Do you want Kitchen facility? (Yes/No): ");
+                    deluxKitchen = sc.next();
+                }
+
+                System.out.print("*Do you want Wifi facility? (Yes/No): ");
+                String deluxWifi = sc.next();
+                while (!(deluxWifi.toLowerCase().equals("yes")) && !(deluxWifi.toLowerCase().equals("no"))) {
+                    System.out.println("\n... Please Enter yes/no for your answer!!!! ...");
+                    System.out.print("*Do you want Wifi facility? (Yes/No): ");
+                    deluxWifi = sc.next();
+                }
+
                 /*
                  * call the extraFacilities method and
                  * pass the customers selection(yes/no) to get prices for each facility
                  */
+
                 boolean deluxBalconeySelected = extraFacilities(deluxBalcony);
-
-                System.out.print("*Do you want Parking facility? (Yes/No): ");
-                String deluxParking = sc.next();
                 boolean deluxParkingSelected = extraFacilities(deluxParking);
-
-                System.out.print("*Do you want Televsion facility? (Yes/No): ");
-                String deluxTv = sc.next();
                 boolean deluxTvSelected = extraFacilities(deluxTv);
-
-                System.out.print("*Do you want Kitchen facility? (Yes/No): ");
-                String deluxKitchen = sc.next();
                 boolean deluxKitchenSelected = extraFacilities(deluxKitchen);
-
-                System.out.print("*Do you want Wifi facility? (Yes/No): ");
-                String deluxWifi = sc.next();
                 boolean deluxWifiSelected = extraFacilities(deluxWifi);
 
                 // call the method and pass the values for calculating total room charge
@@ -164,18 +204,42 @@ public class RoomChargeCalculator {
             System.out.print("\nDo you want to add Additional Services for Standard Family Room? (Yes/No): ");
             cusAnswer = sc.next();
 
+            while (!(cusAnswer.toLowerCase().equals("yes")) && !(cusAnswer.toLowerCase().equals("no"))) {
+                System.out.println("\n... Please Enter yes/no for your answer!!!! ...");
+
+                System.out.print("Do you want to add Additional Services for Standard Family Room? (Yes/No): ");
+                cusAnswer = sc.next();
+
+            }
+
             if (cusAnswer.toLowerCase().equals("yes")) {
 
                 System.out.print("\n*Do you want Parking facility? (Yes/No): ");
                 String familyParking = sc.next();
-                boolean fParking = extraFacilities(familyParking);
+                while (!(familyParking.toLowerCase().equals("yes")) && !(familyParking.toLowerCase().equals("no"))) {
+                    System.out.println("\n... Please Enter yes/no for your answer!!!! ...");
+                    System.out.print("*Do you want Parking facility? (Yes/No): ");
+                    familyParking = sc.next();
+                }
 
                 System.out.print("*Do you want Kitchen facility? (Yes/No): ");
                 String familyKitchen = sc.next();
-                boolean fKitchen = extraFacilities(familyKitchen);
+                while (!(familyKitchen.toLowerCase().equals("yes")) && !(familyKitchen.toLowerCase().equals("no"))) {
+                    System.out.println("\n... Please Enter yes/no for your answer!!!! ...");
+                    System.out.print("*Do you want Kitchen facility? (Yes/No): ");
+                    familyKitchen = sc.next();
+                }
 
                 System.out.print("*Do you want garden facility? (Yes/No): ");
                 String familygarden = sc.next();
+                while (!(familygarden.toLowerCase().equals("yes")) && !(familygarden.toLowerCase().equals("no"))) {
+                    System.out.println("\n... Please Enter yes/no for your answer!!!! ...");
+                    System.out.print("*Do you want garden facility? (Yes/No): ");
+                    familygarden = sc.next();
+                }
+
+                boolean fParking = extraFacilities(familyParking);
+                boolean fKitchen = extraFacilities(familyKitchen);
                 boolean fGarden = extraFacilities(familygarden);
 
                 getChargeStandardFamily(fParking, fKitchen, fGarden);
@@ -195,31 +259,58 @@ public class RoomChargeCalculator {
             System.out.print("\nDo you want to add Additional Services for Standard Single Room? (Yes/No): ");
             cusAnswer = sc.next();
 
+            while (!(cusAnswer.toLowerCase().equals("yes")) && !(cusAnswer.toLowerCase().equals("no"))) {
+
+                System.out.println("\n... Please Enter yes/no for your answer!!!! ...");
+
+                System.out.print("Do you want to add Additional Services for Standard Single Room? (Yes/No): ");
+                cusAnswer = sc.next();
+            }
+
             if (cusAnswer.toLowerCase().equals("yes")) {
 
                 System.out.print("\n*Do you want Parking facility? (Yes/No): ");
                 String singleParking = sc.next();
-                boolean sParking = extraFacilities(singleParking);
+                while (!(singleParking.toLowerCase().equals("yes")) && !(singleParking.toLowerCase().equals("no"))) {
+
+                    System.out.println("\n... Please Enter yes/no for your answer!!!! ...");
+                    System.out.print("*Do you want Parking facility? (Yes/No): ");
+                    singleParking = sc.next();
+
+                }
 
                 System.out.print("*Do you want Ac facility? (Yes/No): ");
                 String singleAc = sc.next();
-                boolean sAc = extraFacilities(singleAc);
+                while (!(singleAc.toLowerCase().equals("yes")) && !(singleAc.toLowerCase().equals("no"))) {
+                    System.out.println("\n... Please Enter yes/no for your answer!!!! ...");
+                    System.out.print("*Do you want Ac facility? (Yes/No): ");
+                    singleAc = sc.next();
+                }
 
                 System.out.print("*Do you want Wifi facility? (Yes/No): ");
                 String singleWifi = sc.next();
+                while (!(singleWifi.toLowerCase().equals("yes")) && !(singleWifi.toLowerCase().equals("no"))) {
+                    System.out.println("\n... Please Enter yes/no for your answer!!!! ...");
+                    System.out.print("*Do you want Wifi facility? (Yes/No): ");
+                    singleWifi = sc.next();
+                }
+
+                boolean sParking = extraFacilities(singleParking);
+                boolean sAc = extraFacilities(singleAc);
                 boolean sWifi = extraFacilities(singleWifi);
 
                 getChargeStandardSingle(sParking, sAc, sWifi);
             } else {
                 System.out.println(
-                        "\n=== Your Total Charge for Standard Family Room:-  " + fixedStandardFamilyFee + "/- ===");
+                        "\n=== Your Total Charge for Standard Single Room:-  " + fixedStandardSingelFee + "/- ===");
             }
         } else if (choice == 4) {
             System.out
                     .println(
                             "..... We are always trying to give you a qulity service. Have a Nice day Sir/Madam .....");
         } else {
-            System.out.println("\n!!!... Wrong Input ...!!!"); // Show error message for wrong input
+            System.out.println("\n!!!... Wrong Input ...!!!");
         }
+        sc.close(); // close the Scanner
     }
 }
