@@ -1,5 +1,5 @@
 
-//import util classes for generating random numbers
+//import util classes for generating random numbers(import all util classes)
 import java.util.*;
 
 public class RandNum {

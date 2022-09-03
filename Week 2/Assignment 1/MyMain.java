@@ -8,7 +8,7 @@ public class MyMain {
         // create object
         RandNum randObj = new RandNum(randNumbers);
 
-        // call display array method
+        // call displayArray method
         randObj.displayArray();
 
     }
